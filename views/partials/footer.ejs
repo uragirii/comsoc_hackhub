@@ -1,0 +1,68 @@
+
+    
+    
+    <script>
+        var slider = document.getElementById("myRange");
+        var output = document.getElementById("demo");
+        output.innerHTML = slider.value; // Display the default slider value
+
+        // Update the current slider value (each time you drag the slider handle)
+        slider.oninput = function() {
+        output.innerHTML = this.value;
+        }
+        $("#myRange").on("input",function(){
+            $("#demo").innerHTML = this.value
+            demo_value = this.value;
+        //     $.post("/secret",{data: demo_value},function(data, status){
+        //     console.log("POST send");
+        // })
+
+        })
+        $("#stopm").click(function(){
+            console.log("test")
+            $.post({
+                url:"/rpm",
+                data: {'value':0},
+                success:function(){
+                    console.log("manual");
+                }
+           })
+        })
+        $(".submit").click(function(){
+            $("#myForm").submit();
+        })
+        $("#manual").click(function(){
+            $("#mkc").toggleClass("hideform"); 
+            $("#manual").val("Monitor Temperature Automatically");
+            var blah = $("#mkc").hasClass("hideform")
+           if(blah){
+            $.post({
+                url:"/rpm",
+                data: {'value':-1},
+                success:function(){
+                    console.log("send 0");
+                }
+           })
+        }
+        else {
+            $.post({
+                url:"/rpm",
+                data: {'value':10},
+                success:function(){
+                    console.log("send 0");
+                }
+           })
+        }
+    })
+        // $(".submit").on("click", function(){
+        //     $.post({
+        //         url : "/secret",
+        //         data : 53,
+        //         success :function(){
+        //             console.log("Value Sent");
+        //         }
+        //     })
+        // })
+    </script>
+    
+</body>

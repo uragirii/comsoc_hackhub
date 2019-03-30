@@ -1,0 +1,36 @@
+body{
+  background-color: #141414;
+}
+.navbar{
+  background: #090909;
+  padding-right: 10%;
+  padding-left: 10%;
+}
+#mainNav{
+  background: transparent;
+}
+.far{
+  padding-left:5px;
+}
+.nav-link{
+  color:#d9534f;
+}
+body{
+  background-color: #141414;
+}
+.navbar-brand{
+  font-size: 1.5rem;
+  color: #d9534f;
+}
+.navbar{
+  background-color: #090909;
+  padding-right: 10%;
+  padding-left: 10%;
+}
+
+nav ul{
+  font-size : 1.2rem;
+}
+.hideform{
+  display: none;
+}
